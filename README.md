@@ -23,3 +23,13 @@ Total: 60 min
 Create a UTF-8 text file with one session per line. Write the minutes first, then a space and the subject. A name can include spaces, as in `30 Linear algebra`. Use the same spelling each time you log that subject.
 
 Run `python3 study_time.py my-week.txt` with the name of your file. Blank lines are fine, so you can leave a gap between days.
+
+Use positive whole minutes. If line 2 in `my-week.txt` reads `-5 Calculus`, the script stops and shows where to fix the log.
+
+```text
+my-week.txt: line 2: minutes must be a positive whole number
+```
+
+## Git practice notes
+
+The first two commits on `main` added the script and a sample log. While checking that version, I tried entering `25 Calculus` and then `-5 Calculus`. It printed a total of 20 minutes. I made a branch called `validate-sessions` for the fix so I could compare the two versions with `git diff main`.
